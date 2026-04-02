@@ -1,0 +1,91 @@
+/* ============================================================
+   DE CHANGENCY, DESIGN TOKENS (variables.css)
+   Alle kleuren, fonts, spacing en overige tokens.
+   ============================================================ */
+
+:root {
+  /* ---- Kleuren ---- */
+  --color-primary:        #8B3A62;
+  --color-primary-light:  #A85080;
+  --color-avatar-ring:    color-mix(in srgb, var(--color-primary) 38%, transparent);
+  --color-saar-pink:      #EC4899;
+  --color-saar-pink-dark: #BE185D;
+  --color-saar-pink-soft: #FBCFE8;
+  --color-accent:         #D4A0B0;
+  --color-accent-light:   #E8C8D2;
+  --color-dark:           #3D1F2E;
+  --color-text:           #2D2D2D;
+  --color-text-light:     #6B6B6B;
+  --color-bg:             #FAFAF8;
+  --color-bg-alt:         #F3F0EE;
+  --color-border:         #E5E0DC;
+  --color-white:          #FFFFFF;
+
+  /* ---- Fonts ---- */
+  --font-heading: 'Plus Jakarta Sans', sans-serif;
+  --font-body:    'Inter', sans-serif;
+
+  /* ---- Font weights ---- */
+  --fw-regular:  400;
+  --fw-medium:   500;
+  --fw-semibold: 600;
+  --fw-bold:     700;
+
+  /* ---- Font sizes (mobile-first) ---- */
+  --fs-xs:   0.75rem;   /* 12px */
+  --fs-sm:   0.875rem;  /* 14px */
+  --fs-base: 1rem;      /* 16px */
+  --fs-md:   1.125rem;  /* 18px */
+  --fs-lg:   1.25rem;   /* 20px */
+  --fs-xl:   1.5rem;    /* 24px */
+  --fs-2xl:  1.875rem;  /* 30px */
+  --fs-3xl:  2.25rem;   /* 36px */
+  --fs-4xl:  3rem;      /* 48px */
+
+  /* ---- Spacing ---- */
+  --space-xs:   0.25rem;  /* 4px */
+  --space-sm:   0.5rem;   /* 8px */
+  --space-md:   1rem;     /* 16px */
+  --space-lg:   1.5rem;   /* 24px */
+  --space-xl:   2rem;     /* 32px */
+  --space-2xl:  3rem;     /* 48px */
+  --space-3xl:  4rem;     /* 64px */
+  --space-4xl:  6rem;     /* 96px */
+  --space-5xl:  8rem;     /* 128px */
+
+  /* Ruimte tussen kop en eerste alinea (balans: leesbaar, niet zo ruim als 2xl/3xl) */
+  --space-title-to-lead: var(--space-xl);
+
+  /* ---- Layout ---- */
+  --container-max:   1120px;
+  --container-pad:   1.25rem;  /* 20px op mobiel */
+  --border-radius:   8px;
+  --border-radius-lg: 12px;
+
+  /* ---- Shadows ---- */
+  --shadow-sm:  0 1px 3px rgba(0, 0, 0, 0.06);
+  --shadow-md:  0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-lg:  0 8px 24px rgba(0, 0, 0, 0.10);
+  --shadow-header: 0 2px 8px rgba(0, 0, 0, 0.06);
+
+  /* ---- Transitions ---- */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+  --transition-slow: 400ms ease;
+
+  /* ---- Header ---- */
+  --header-height: 72px;
+}
+
+/* ---- Breakpoint-specifieke overrides ---- */
+@media (min-width: 768px) {
+  :root {
+    --container-pad: 2rem;
+  }
+}
+
+@media (min-width: 968px) {
+  :root {
+    --container-pad: 2.5rem;
+  }
+}

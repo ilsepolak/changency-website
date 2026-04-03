@@ -11,8 +11,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../css/variables.css?v=7">
   <link rel="stylesheet" href="../../css/base.css?v=8">
-  <link rel="stylesheet" href="../../css/components.css?v=5">
-  <link rel="stylesheet" href="../../css/pages.css?v=15">
+  <link rel="stylesheet" href="../../css/components.css?v=6">
+  <link rel="stylesheet" href="../../css/pages.css?v=16">
 </head>
 <body>
 
@@ -36,12 +36,18 @@
   </header>
 
   <div class="mobile-nav" id="site-nav-mobile">
-    <a href="/">Home</a>
-    <a href="/diensten" class="active">Diensten</a>
-    <a href="/over">Over</a>
-    <a href="/recensies">Recensies</a>
-    <a href="/contact">Contact</a>
-    <a href="https://outlook.office.com/bookwithme/user/3ba84f5275a04a53a552e55d74b078a3@de-changency.nl/meetingtype/CZYwrjTpFEqelQYrEpkcug2?anonymous&ep=mcard" class="mobile-cta" target="_blank" rel="noopener">Plan een kennismaking</a>
+    <button type="button" class="mobile-nav-close" aria-label="Menu sluiten">
+      <span class="mobile-nav-close-line" aria-hidden="true"></span>
+      <span class="mobile-nav-close-line" aria-hidden="true"></span>
+    </button>
+    <div class="mobile-nav-links">
+      <a href="/">Home</a>
+      <a href="/diensten" class="active">Diensten</a>
+      <a href="/over">Over</a>
+      <a href="/recensies">Recensies</a>
+      <a href="/contact">Contact</a>
+      <a href="https://outlook.office.com/bookwithme/user/3ba84f5275a04a53a552e55d74b078a3@de-changency.nl/meetingtype/CZYwrjTpFEqelQYrEpkcug2?anonymous&ep=mcard" class="mobile-cta" target="_blank" rel="noopener">Plan een kennismaking</a>
+    </div>
   </div>
 
   <main>
@@ -197,6 +203,6 @@
     </div>
   </footer>
 
-  <script src="../../js/main.js?v=2"></script>
+  <script src="../../js/main.js?v=3"></script>
 </body>
 </html>

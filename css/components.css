@@ -150,18 +150,78 @@ header nav > ul li a.active {
     left: 0;
     width: 100%;
     height: 100vh;
+    height: 100dvh;
     background-color: var(--color-bg);
     z-index: 1050;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: var(--space-lg);
-    text-align: center;
-    padding: var(--space-3xl);
+    justify-content: flex-start;
+    align-items: stretch;
+    text-align: left;
+    padding: calc(env(safe-area-inset-top, 0px) + var(--header-height) + var(--space-md)) var(--container-pad) var(--space-3xl);
 }
 
 .mobile-nav.open {
     display: flex;
+    z-index: 1101;
+}
+
+/* Sluitkruis (zelfde patroon als Saar: dun X, rechtsboven, voldoende tikgebied) */
+.mobile-nav-close {
+    position: absolute;
+    top: max(env(safe-area-inset-top, 0px), 0);
+    right: max(env(safe-area-inset-right, 0px), var(--container-pad));
+    width: 44px;
+    height: 44px;
+    margin-top: calc((var(--header-height) - 44px) / 2);
+    padding: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mobile-nav-close-line {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 22px;
+    height: 2px;
+    margin-top: -1px;
+    margin-left: -11px;
+    background-color: var(--color-dark);
+    border-radius: 1px;
+    pointer-events: none;
+}
+
+.mobile-nav-close-line:first-of-type {
+    transform: rotate(45deg);
+}
+
+.mobile-nav-close-line:last-of-type {
+    transform: rotate(-45deg);
+}
+
+.mobile-nav-close:hover .mobile-nav-close-line,
+.mobile-nav-close:focus-visible .mobile-nav-close-line {
+    background-color: var(--color-primary);
+}
+
+.mobile-nav-close:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+.mobile-nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-lg);
+    width: 100%;
+    max-width: calc(var(--container-max) + 2 * var(--container-pad));
+    margin: 0 auto 0 0;
 }
 
 .mobile-nav a {
@@ -180,7 +240,7 @@ header nav > ul li a.active {
 }
 
 .mobile-cta {
-    margin-top: var(--space-lg);
+    margin-top: var(--space-md);
     display: inline-block;
     background-color: var(--color-primary);
     color: var(--color-white) !important;
@@ -330,7 +390,7 @@ footer {
 @media (max-width: 768px) {
     .footer-columns {
         grid-template-columns: 1fr;
-        text-align: center;
+        text-align: left;
     }
 
     .footer-brand p {
@@ -338,19 +398,20 @@ footer {
     }
 
     .footer-brand img {
-        margin-left: auto;
+        margin-left: 0;
         margin-right: auto;
     }
 
     .footer-columns ul {
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
     }
 
     .footer-bottom {
         flex-direction: column;
+        align-items: flex-start;
         gap: var(--space-sm);
-        text-align: center;
+        text-align: left;
     }
 }

@@ -308,6 +308,7 @@ document.addEventListener('DOMContentLoaded', () => {
      ================================================================ */
   const hamburger = document.querySelector('.hamburger');
   const mobileNav = document.querySelector('.mobile-nav');
+  const mobileNavClose = document.querySelector('.mobile-nav-close');
 
   const setMenuOpen = (open) => {
     if (!hamburger || !mobileNav) return;
@@ -327,6 +328,10 @@ document.addEventListener('DOMContentLoaded', () => {
     hamburger.addEventListener('click', () => {
       setMenuOpen(!mobileNav.classList.contains('open'));
     });
+
+    if (mobileNavClose) {
+      mobileNavClose.addEventListener('click', () => setMenuOpen(false));
+    }
 
     mobileNav.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => setMenuOpen(false));

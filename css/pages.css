@@ -437,6 +437,12 @@ section#saar > div > a:hover {
     color: var(--color-saar-pink-dark);
 }
 
+.quote-readmore:focus-visible {
+    outline: 2px solid var(--color-saar-pink-dark);
+    outline-offset: 3px;
+    border-radius: 2px;
+}
+
 #testimonials .testimonials-intro {
     font-size: var(--fs-sm);
     color: var(--color-text-light);
@@ -473,6 +479,22 @@ section#saar > div > a:hover {
     display: block;
     color: var(--color-text-light);
     font-size: var(--fs-xs);
+}
+
+/* Mobiel: avatar boven naam/functie zodat de tekst de volle kaartbreedte krijgt */
+@media (max-width: 768px) {
+    .quotes blockquote footer,
+    .testimonials-carousel__track.quotes blockquote footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-md);
+    }
+
+    .quotes blockquote footer .quote-footer-text,
+    .testimonials-carousel__track.quotes blockquote footer .quote-footer-text {
+        align-self: stretch;
+        max-width: 100%;
+    }
 }
 
 @media (max-width: 480px) {

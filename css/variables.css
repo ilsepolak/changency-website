@@ -75,6 +75,7 @@
 
   /* ---- Header ---- */
   --header-height: 72px;
+  --logo-img-height: 34px;
 }
 
 /* ---- Breakpoint-specifieke overrides ---- */

@@ -44,6 +44,12 @@ a:hover {
   color: var(--color-primary-light);
 }
 
+main a:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
 ul, ol {
   list-style: none;
 }

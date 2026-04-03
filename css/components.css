@@ -41,9 +41,15 @@ header nav > a:first-child {
 }
 
 header nav > a:first-child img {
-    height: 34px;
+    height: var(--logo-img-height);
     width: auto;
     display: block;
+}
+
+header nav > a:first-child:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 4px;
+    border-radius: 4px;
 }
 
 /* Navigation links, naar rechts bij de CTA, niet verspreid over de header */
@@ -89,6 +95,12 @@ header nav > ul li a.active {
     color: var(--color-primary);
 }
 
+header nav > ul li a:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 4px;
+    border-radius: 2px;
+}
+
 /* Nav CTA Button */
 .nav-cta {
     display: inline-block;
@@ -108,21 +120,42 @@ header nav > ul li a.active {
     transform: translateY(-1px);
 }
 
+.nav-cta:focus-visible {
+    outline: 2px solid var(--color-white);
+    outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .nav-cta:hover {
+        transform: none;
+    }
+}
+
 /* ---- HAMBURGER MENU ---- */
 .hamburger {
     display: none;
     flex-direction: column;
     justify-content: space-around;
-    width: 26px;
-    height: 20px;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    min-height: 44px;
+    padding: 12px 9px;
+    box-sizing: border-box;
     cursor: pointer;
-    padding: 0;
     z-index: 1100;
+}
+
+.hamburger:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+    border-radius: var(--border-radius);
 }
 
 .hamburger span {
     display: block;
-    width: 100%;
+    width: 26px;
     height: 2px;
     background-color: var(--color-dark);
     border-radius: 2px;
@@ -239,6 +272,12 @@ header nav > ul li a.active {
     text-decoration: none;
 }
 
+.mobile-nav a:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 4px;
+    border-radius: 2px;
+}
+
 .mobile-cta {
     margin-top: var(--space-md);
     display: inline-block;
@@ -252,6 +291,11 @@ header nav > ul li a.active {
 
 .mobile-cta:hover {
     background-color: var(--color-primary-light);
+}
+
+.mobile-cta:focus-visible {
+    outline: 2px solid var(--color-dark);
+    outline-offset: 3px;
 }
 
 /* ---- FOOTER ---- */
@@ -271,7 +315,7 @@ footer {
 }
 
 .footer-brand img {
-    height: 28px;
+    height: var(--logo-img-height);
     width: auto;
     margin-bottom: var(--space-md);
     filter: brightness(0) invert(1);
@@ -313,6 +357,12 @@ footer {
     text-decoration: none;
 }
 
+.footer-columns ul li a:focus-visible {
+    outline: 2px solid rgba(255, 255, 255, 0.9);
+    outline-offset: 3px;
+    border-radius: 2px;
+}
+
 .footer-bottom {
     max-width: calc(var(--container-max) + 2 * var(--container-pad));
     margin: 0 auto;
@@ -324,7 +374,7 @@ footer {
     align-items: center;
     gap: var(--space-sm) var(--space-md);
     font-size: var(--fs-xs);
-    opacity: 0.5;
+    color: rgba(255, 255, 255, 0.58);
 }
 
 .footer-legal {
@@ -339,13 +389,19 @@ footer {
 }
 
 .footer-bottom a {
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.82);
     text-decoration: none;
     transition: color var(--transition-fast);
 }
 
 .footer-bottom a:hover {
     color: var(--color-white);
+}
+
+.footer-bottom a:focus-visible {
+    outline: 2px solid rgba(255, 255, 255, 0.85);
+    outline-offset: 3px;
+    border-radius: 2px;
 }
 
 /* ---- LABELS / BADGES ---- */
